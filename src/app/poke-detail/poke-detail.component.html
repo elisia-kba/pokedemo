@@ -1,0 +1,24 @@
+<div *ngIf="detail" class="pokemon-card">
+
+  <div class="pokemon-image">
+      <img src= {{detail.sprites.front_default}} alt="Image du Pokémon" >
+      <div class="pokemon-name">{{ detail.name}}</div>
+  </div>
+
+  <div class="pokemon-details">
+    <div style="text-align: center;">
+        Poids: <br> {{detail.height}}
+    </div>
+    <div style="text-align: center;">
+        Taille: <br>{{detail.weight}}
+    </div>
+    <div>
+        Caractéristiques: <br>
+    <ul class="pokemon-abilities">
+      <li *ngFor="let ability of detail.abilities">
+        {{ ability.ability.name }}
+      </li>
+    </ul>
+  </div>
+  
+ 
