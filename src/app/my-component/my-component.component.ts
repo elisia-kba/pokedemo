@@ -30,34 +30,43 @@ export class MyComponentComponent  implements OnInit{
       data.results.forEach((e:any, index:number) => {
         this.pokemons.push(new Pokemon (""+(index+1),e.name))
         
+        
       });
     });
-}
+  }
   
   goFun() {
-    this.pokeShareInfo.setValue(this.selectedPokemonId)
     if (this.selectedPokemon) {
       this.selectedPokemonId = this.selectedPokemon.id;
       console.log(`Pokémon trouvé : ${this.selectedPokemon.nom} (ID: ${this.selectedPokemon.id})`);
-  
-     
+    
       this.pokeService.getPokemonsInfo(this.selectedPokemonId)
         .subscribe((data) => {
           this.pokeDetail = data;
           this.pokeShareInfo.setValue(this.selectedPokemonId);
+          console.log(this.pokeDetail?.sprites.front_default);
+          console.log(this.pokeDetail?.sprites.back_default);
         });
-      
-        console.log(this.pokeDetail?.sprites.front_default);
-        console.log(this.pokeDetail?.sprites.back_default);
-        
-    }     
-    else {
+    } else {
       console.log('Aucun Pokémon trouvé');
     }
-   
+  }
+    
+  // Fonction pour passer au Pokémon suivant
+  nextPokemon() {
+    const currentIndex = this.pokemons.findIndex(p => p.id === this.selectedPokemon?.id);
+    if (currentIndex < this.pokemons.length - 1) {
+      this.selectedPokemon = this.pokemons[currentIndex + 1];
+      this.goFun(); 
+    }
   }
 
- 
-
-  
+  // Fonction pour revenir au Pokémon précédent
+  prevPokemon() {
+    const currentIndex = this.pokemons.findIndex(p => p.id === this.selectedPokemon?.id);
+    if (currentIndex > 0) {
+      this.selectedPokemon = this.pokemons[currentIndex - 1];
+      this.goFun(); 
+    }
+  }
 }

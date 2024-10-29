@@ -1,4 +1,9 @@
-
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('/public/lib/fonts/PokemonSolid.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .container {
     display: flex;
     width: 100%;
@@ -13,55 +18,37 @@
 }
 
 .sidebar {
-    width: 20%; /* Vous pouvez ajuster la largeur selon vos préférences */
+    width: 20%; 
     background-color:#3b4cca;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto; 
     min-height: 100vh; 
-    flex-grow: 1;
-    padding: 40px;
+   
+    
 }
 
 .sidebar.gauche {
-    border-right: 2px solid black;
+    border-right: 2px solid rgba(255, 255, 255, 0.5)
 }
 
 .sidebar.droit {
-    border-left: 2px solid black;
+    border-left: 2px solid rgba(255, 255, 255, 0.5)
 }
-
 
 h1 {
-    font-family: 'Arial', sans-serif; /* Vous pouvez utiliser une police qui se rapproche de celle de Pokémon */
-    font-size: 4rem;
-    font-weight: bold;
-    text-align: center;
-    color: #ffcb05; /* Jaune vif pour ressembler au logo de Pokémon */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'PokemonSolid';
+    font-size: 100px;
+    color: #f1c40f;
+    text-shadow: 3px 3px 0 #2980b9;       
+    transition: 0.3s;
     position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: transparent;
-}
-
-/* Contour bleu autour du texte */
-h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 8px solid #3b4cca; /* Bleu foncé similaire au contour du logo Pokémon */
-    border-radius: 15px; /* Bord arrondi pour le contour du texte */
-    z-index: -1; /* S'assurer que le contour est derrière le texte */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ombre portée pour donner du relief */
+    text-transform: capitalize; 
+    margin-top: -20px;
 }
 
 img {
-    width : 300px;
-    height : 300px;
+    width : 225px;
+    height : 250px;
 }

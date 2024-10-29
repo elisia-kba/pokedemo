@@ -1,19 +1,14 @@
-<p>Entrez le nom d'un pokémon</p><br>
-<input type="text" [(ngModel)]="searchText" placeholder="Rechercher un Pokémon" /><br>
 
+<input type="text" [(ngModel)]="searchText" placeholder="Rechercher un Pokémon" />
 
-<p>Sélectionnez un pokémon</p><br>
-<select [(ngModel)]="selectedPokemon">
+<select [(ngModel)]="selectedPokemon" placeholder="Sélectionnez un pokémon">
   <option *ngFor="let pokemon of (pokemons | filterPokemonPipe:'nom':searchText)" [ngValue]="pokemon">
     {{ pokemon.nom }}
   </option>
 </select><br><br>
 
-<button type="button" (click)="goFun()">Go !</button><br>
-<br>
+<button type="button" (click)="goFun()">Go !</button><br><br>
 
 <div *ngIf="pokeDetail">
-  
-  <app-poke-detail [detail] = pokeDetail></app-poke-detail>
-  
+  <app-poke-detail [detail]="pokeDetail"></app-poke-detail>
 </div>

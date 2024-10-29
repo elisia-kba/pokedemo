@@ -29,7 +29,7 @@ export class PokeService {
           return of();
         }
       }),
-      // Utilise `reduce` pour combiner tous les résultats
+      // On utilise `reduce` pour combiner tous les résultats
       reduce((acc: PokeServiceRes, res: PokeServiceRes) => {
         return {
           count: res.count, 

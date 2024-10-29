@@ -1,16 +1,10 @@
 
 
-/* Styles pour les images des Pokémon dans les sections latérales */
-.side-content img {
-    border-radius: 8px;
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 10px;
-}
+
 button {
     background: linear-gradient(45deg, #3b4cca, #4e65d4);
     border: none;
-    border-radius: 30px; /* Bordure arrondie */
+    border-radius: 30px;
     color: white;
     padding: 15px 30px;
     font-size: 16px;
@@ -18,19 +12,57 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre portée */
-    transition: all 0.3s ease; /* Transition douce sur le hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
     outline: none;
 }
 
-/* Effet survol (hover) */
+
 button:hover {
-    background: linear-gradient(45deg, #ffcb05, #f0ee74); /* Inverser les couleurs du dégradé */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Renforcer l'ombre au survol */
-    transform: translateY(-3px); /* Effet de levée */
+    background: linear-gradient(45deg, #ffcb05, #f0ee74); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-3px); 
 }
 
-/* Effet de focus pour l'accessibilité */
-button:focus {
-    outline: 3px solid rgba(106, 90, 205, 0.5); /* Bordure personnalisée pour focus */
+
+input[type="text"], select {
+    background: rgba(255, 255, 255, 0.8); 
+    color: #333;
+    font-size: 1.2em;
+    padding: 12px 15px;
+    border: 2px solid #3b4cca;
+    border-radius: 30px;
+    width: 220px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+input[type="text"] {
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+
+select {
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    margin-left: 2%;
+}
+
+
+input[type="text"]:hover, select:hover {
+    background: rgba(255, 255, 255, 0.9); 
+    transform: scale(1.05);
+    border-color: #ffcb05;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+input[type="text"]:focus, select:focus {
+    outline: 3px solid rgba(255, 203, 5, 0.5);
+}
+
+body, button, input, select {
+    font-family: 'Fredoka One', sans-serif;
 }
