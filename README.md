@@ -1,7 +1,3 @@
-Voici un modèle de README mis à jour avec le lien vers votre projet sur GitHub :
-
----
-
 # **PokéDemo**
 
 ## Description
