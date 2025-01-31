@@ -1,66 +1,70 @@
-
-
-
 button {
     background: linear-gradient(45deg, #3b4cca, #4e65d4);
     border: none;
     border-radius: 30px;
     color: white;
-    padding: 15px 30px;
-    font-size: 16px;
+    padding: clamp(10px, 3vw, 18px) clamp(20px, 6vw, 30px);
+    font-size: clamp(12px, 4vw, 16px);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-    transition: all 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     outline: none;
+    width: 100px;
+    margin :clamp(0%, 2vw, 2%);
+ 
 }
-
 
 button:hover {
-    background: linear-gradient(45deg, #ffcb05, #f0ee74); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
-    transform: translateY(-3px); 
+    background: linear-gradient(45deg, #ffcb05, #f0ee74);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
 
-
 input[type="text"], select {
-    background: rgba(255, 255, 255, 0.8); 
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
-    font-size: 1.2em;
-    padding: 12px 15px;
+    font-size: clamp(14px, 4vw, 1.2em);
+    padding: clamp(8px, 3vw, 12px) clamp(10px, 4vw, 15px);
     border: 2px solid #3b4cca;
     border-radius: 30px;
-    width: 220px;
+    width: 100%;
+    max-width: 300px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-input[type="text"] {
-    background-position: 10px center;
-    background-repeat: no-repeat;
-}
-
-
 select {
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    margin-left: 2%;
+    margin-left: clamp(0%, 2vw, 2%);
 }
 
-
-input[type="text"]:hover, select:hover {
-    background: rgba(255, 255, 255, 0.9); 
+input[type="text"]:hover, 
+select:hover {
+    background: rgba(255, 255, 255, 0.9);
     transform: scale(1.05);
     border-color: #ffcb05;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-
-input[type="text"]:focus, select:focus {
+input[type="text"]:focus, 
+select:focus {
     outline: 3px solid rgba(255, 203, 5, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 30%;
+    }
+    input[type="text"], select {
+        width: 80%;
+        margin: 8px 0;
+    }
+
+    select {
+        margin-left: 0;
+    }
 }
 
 body, button, input, select {

@@ -5,7 +5,7 @@
   <option *ngFor="let pokemon of (pokemons | filterPokemonPipe:'nom':searchText)" [ngValue]="pokemon">
     {{ pokemon.nom }}
   </option>
-</select><br><br>
+</select>
 
 <button type="button" (click)="goFun()">Go !</button><br><br>
 

@@ -5,10 +5,16 @@
     font-style: normal;
 }
 
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: flex;
     width: 100%;
-    height: auto;
     min-height: 100vh;
     align-items: stretch;
 }
@@ -16,7 +22,11 @@
 .contenu {
     width: 60%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+
 }
+
 .sidebar {
     width: 20%;
     background-color: #0033cc;
@@ -26,14 +36,15 @@
     align-items: center;
     height: 100vh;
     overflow: hidden;
-  }
-  
-  .sidebar img {
+    padding: 10px;
+}
+
+.sidebar img {
     width: auto;
-    height: calc(100% / 2.3);
+    height: calc(90% / 2.3);
     object-fit: cover;
-  }
-  
+    margin: 20px 0;
+}
 
 .sidebar.gauche {
     border-right: 2px solid rgba(255, 255, 255, 0.5);
@@ -45,11 +56,84 @@
 
 h1 {
     font-family: 'PokemonSolid';
-    font-size: 100px;
+    font-size: clamp(2rem, 6vw, 6rem);
     color: #f1c40f;
     text-shadow: 3px 3px 0 #2980b9;
-    transition: 0.3s;
-    position: relative;
+    transition: all 0.3s ease;
     text-transform: capitalize;
-    margin-top: -5px;
+
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .sidebar img {
+        height: 60px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    .contenu {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .sidebar.gauche {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        z-index: 10;
+
+    }
+
+    .sidebar.droit {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        border-left: none;
+        border-top: 2px solid rgba(255, 255, 255, 0.5);
+        z-index: 10;
+    }
+
+    .sidebar img {
+        height: 50px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    .contenu {
+        width: 100%;
+        margin: 100px 0;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 8vw, 4rem);
+    }
 }
